@@ -1,0 +1,134 @@
+/* Général */
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+body{
+    background: #f4f4f4;
+    color: #333;
+}
+
+/* Navbar */
+nav{
+    background: #2c3e50;
+    padding: 15px;
+}
+
+nav a{
+    color: white;
+    text-decoration: none;
+    margin-right: 20px;
+    font-weight: bold;
+}
+
+nav a:hover{
+    color: #f1c40f;
+}
+
+/* Contenu */
+.container{
+    width: 90%;
+    margin: 30px auto;
+}
+
+/* Titres */
+h1,h2{
+    margin-bottom: 20px;
+    color: #2c3e50;
+}
+
+/* Boutons */
+.btn{
+    display: inline-block;
+    padding: 8px 15px;
+    border-radius: 5px;
+    text-decoration: none;
+    color: white;
+    margin: 5px 0;
+}
+
+.btn-add{
+    background: #27ae60;
+}
+
+.btn-edit{
+    background: #2980b9;
+}
+
+.btn-delete{
+    background: #e74c3c;
+}
+
+.btn:hover{
+    opacity: 0.9;
+}
+
+/* Tableau */
+table{
+    width: 100%;
+    border-collapse: collapse;
+    background: white;
+    margin-top: 20px;
+}
+
+table th,
+table td{
+    border: 1px solid #ddd;
+    padding: 10px;
+    text-align: center;
+}
+
+table th{
+    background: #34495e;
+    color: white;
+}
+
+table tr:nth-child(even){
+    background: #f9f9f9;
+}
+
+table tr:hover{
+    background: #ecf0f1;
+}
+
+/* Formulaire */
+form{
+    background: white;
+    padding: 20px;
+    border-radius: 8px;
+    width: 500px;
+}
+
+input,
+select{
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+button{
+    background: #3498db;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button:hover{
+    background: #2980b9;
+}
+
+/* Footer */
+footer{
+    text-align: center;
+    padding: 20px;
+    margin-top: 30px;
+    background: #2c3e50;
+    color: white;
+}
