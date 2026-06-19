@@ -21,18 +21,18 @@ if (!$ens) {
 // UPDATE
 if ($_SERVER["REQUEST_METHOD"] === "POST") {
 
-    $matricule = htmlspecialchars($_POST["matricule"]);
+    $id = htmlspecialchars($_POST["id"]);
     $nom = htmlspecialchars($_POST["nom"]);
-    $email = htmlspecialchars($_POST["email"]);
+    $prenom = htmlspecialchars($_POST["prenom"]);
 
     $sql = "UPDATE enseignants 
-            SET matricule = ?, nom = ?, email = ?
+            SET id = ?, nom = ?, prenom = ?
             WHERE id = ?";
 
     $pdo->prepare($sql)->execute([
-        $matricule,
+        $id,
         $nom,
-        $email,
+        $prenom,
         $id
     ]);
 
@@ -44,9 +44,9 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
 <h2>Modifier Enseignant</h2>
 
 <form method="POST">
-    <input type="text" name="matricule" value="<?= $ens["matricule"] ?>" required>
+    <input type="text" name="id" value="<?= $ens["id"] ?>" required>
     <input type="text" name="nom" value="<?= $ens["nom"] ?>" required>
-    <input type="email" name="email" value="<?= $ens["email"] ?>" required>
+    <input type="prenom" name="prenom" value="<?= $ens["prenom"] ?>" required>
 
     <button type="submit">Modifier</button>
 </form>

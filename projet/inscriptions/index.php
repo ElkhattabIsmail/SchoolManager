@@ -2,7 +2,6 @@
 require_once "../config/database.php";
 include "../includes/header.php";
 
-// جلب inscriptions مع أسماء التلميذ و القسم
 $sql = "
 SELECT 
     i.id,

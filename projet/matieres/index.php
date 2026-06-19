@@ -6,7 +6,7 @@ $rows = $pdo->query("SELECT * FROM matieres")->fetchAll();
 ?>
 
 <h2>Matières</h2>
-<a href="create.php">+ Ajouter</a>
+<a href="create.php">+ Ajouter Matiere</a>
 
 <ul>
 <?php foreach ($rows as $r): ?>

@@ -10,23 +10,23 @@ $eleve = $stmt->fetch();
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
-    $matricule = htmlspecialchars($_POST["matricule"]);
+    $id = htmlspecialchars($_POST["id"]);
     $nom = htmlspecialchars($_POST["nom"]);
     $prenom = htmlspecialchars($_POST["prenom"]);
 
     $sql = "UPDATE eleves 
-            SET matricule = ?, nom = ?, prenom = ?
+            SET id = ?, nom = ?, prenom = ?
             WHERE id = ?";
 
     $stmt = $pdo->prepare($sql);
-    $stmt->execute([$matricule, $nom, $prenom, $id]);
+    $stmt->execute([$id, $nom, $prenom, $id]);
 
     header("Location: index.php");
 }
 ?>
 
 <form method="POST">
-    <input type="text" name="matricule" value="<?= $eleve['matricule'] ?>">
+    <input type="text" name="id" value="<?= $eleve['id'] ?>">
     <input type="text" name="nom" value="<?= $eleve['nom'] ?>">
     <input type="text" name="prenom" value="<?= $eleve['prenom'] ?>">
     <button type="submit">Modifier</button>

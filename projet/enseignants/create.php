@@ -3,14 +3,14 @@ require_once "../config/database.php";
 
 if ($_POST) {
     $stmt = $pdo->prepare(
-        "INSERT INTO enseignants (matricule, nom, email)
+        "INSERT INTO enseignants (id, nom, prenom)
          VALUES (?, ?, ?)"
     );
 
     $stmt->execute([
-        $_POST["matricule"],
+        $_POST["id"],
         $_POST["nom"],
-        $_POST["email"]
+        $_POST["prenom"]
     ]);
 
     header("Location: index.php");
@@ -18,8 +18,8 @@ if ($_POST) {
 ?>
 
 <form method="POST">
-    <input name="matricule" placeholder="Matricule">
+    <input name="id" placeholder="id">
     <input name="nom" placeholder="Nom">
-    <input name="email" placeholder="Email">
+    <input name="prenom" placeholder="prenom">
     <button>Ajouter</button>
 </form>

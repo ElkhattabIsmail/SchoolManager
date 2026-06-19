@@ -12,7 +12,6 @@ $eleves = $stmt->fetchAll(PDO::FETCH_ASSOC);
 <table border="1">
     <tr>
         <th>ID</th>
-        <th>Matricule</th>
         <th>Nom</th>
         <th>Prénom</th>
         <th>Actions</th>
@@ -21,7 +20,6 @@ $eleves = $stmt->fetchAll(PDO::FETCH_ASSOC);
     <?php foreach ($eleves as $e): ?>
     <tr>
         <td><?= $e["id"] ?></td>
-        <td><?= $e["matricule"] ?></td>
         <td><?= $e["nom"] ?></td>
         <td><?= $e["prenom"] ?></td>
         <td>

@@ -3,17 +3,17 @@ require_once "../config/database.php";
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
-    $matricule = htmlspecialchars($_POST["matricule"]);
+    $id = htmlspecialchars($_POST["id"]);
     $nom = htmlspecialchars($_POST["nom"]);
     $prenom = htmlspecialchars($_POST["prenom"]);
 
-    $sql = "INSERT INTO eleves (matricule, nom, prenom)
-            VALUES (:matricule, :nom, :prenom)";
+    $sql = "INSERT INTO eleves (id, nom, prenom)
+            VALUES (:id, :nom, :prenom)";
 
     $stmt = $pdo->prepare($sql);
 
     $stmt->execute([
-        ":matricule" => $matricule,
+        ":id" => $id,
         ":nom" => $nom,
         ":prenom" => $prenom
     ]);
@@ -24,7 +24,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 ?>
 
 <form method="POST">
-    <input type="text" name="matricule" placeholder="Matricule" required>
+    <input type="text" name="id" placeholder="id" required>
     <input type="text" name="nom" placeholder="Nom" required>
     <input type="text" name="prenom" placeholder="Prénom" required>
     <button type="submit">Ajouter</button>
